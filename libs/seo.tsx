@@ -15,7 +15,7 @@ export const getSEOTags = ({
   extraTags,
 }: Metadata & {
   canonicalUrlRelative?: string;
-  extraTags?: Record<string, string>;
+  extraTags?: Record<string, any>;
 } = {}) => {
   return {
     // up to 50 characters (what does your app do for the user?) > your main should be here

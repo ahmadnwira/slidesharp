@@ -4,7 +4,11 @@ import CardCategory from "../../_assets/components/CardCategory";
 import { getSEOTags } from "@/libs/seo";
 import config from "@/config";
 
-export async function generateMetadata({ params }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { categoryId: string };
+}) {
   const category = categories.find(
     (category) => category.slug === params.categoryId
   );
@@ -16,7 +20,11 @@ export async function generateMetadata({ params }) {
   });
 }
 
-export default async function Category({ params }) {
+export default async function Category({
+  params,
+}: {
+  params: { categoryId: string };
+}) {
   const category = categories.find(
     (category) => category.slug === params.categoryId
   );
@@ -24,7 +32,10 @@ export default async function Category({ params }) {
     .filter((article) =>
       article.categories.map((c) => c.slug).includes(category.slug)
     )
-    .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+    )
     .slice(0, 3);
 
   return (

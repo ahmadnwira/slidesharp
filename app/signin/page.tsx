@@ -15,10 +15,15 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
 
-  const handleSignup = async (options: {
-    type: string;
-    provider?: Provider;
-  }) => {
+  const handleSignup = async (
+    e: any,
+    options: {
+      type: string;
+      provider?: Provider;
+    }
+  ) => {
+    e?.preventDefault();
+
     setIsLoading(true);
 
     try {
@@ -77,7 +82,9 @@ export default function Login() {
       <div className="space-y-8 max-w-xl mx-auto">
         <button
           className="btn btn-block"
-          onClick={(e) => handleSignup({ type: "oauth", provider: "google" })}
+          onClick={(e) =>
+            handleSignup(e, { type: "oauth", provider: "google" })
+          }
           disabled={isLoading}
         >
           {isLoading ? (
@@ -115,7 +122,7 @@ export default function Login() {
 
         <form
           className="form-control w-full space-y-4"
-          onSubmit={(e) => handleSignup({ type: "magic_link" })}
+          onSubmit={(e) => handleSignup(e, { type: "magic_link" })}
         >
           <input
             required

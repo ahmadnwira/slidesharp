@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { Provider } from "@supabase/supabase-js";
-import toast from "react-hot-toast";
+import { useToast } from "@/components/ui/use-toast";
 import config from "@/config";
 
 // This a login/singup page for Supabase Auth.
@@ -14,6 +14,7 @@ export default function Login() {
   const [email, setEmail] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [isDisabled, setIsDisabled] = useState<boolean>(false);
+  const { toast } = useToast();
 
   const handleSignup = async (
     e: any,
@@ -45,7 +46,11 @@ export default function Login() {
           },
         });
 
-        toast.success("Check your emails!");
+        toast({
+          title: "Check your emails!",
+          description: "We've sent you a magic link to sign in.",
+          duration: 5000,
+        });
 
         setIsDisabled(true);
       }

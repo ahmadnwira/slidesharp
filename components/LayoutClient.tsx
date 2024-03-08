@@ -5,7 +5,7 @@ import { useEffect, useState, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { Crisp } from "crisp-sdk-web";
 import NextTopLoader from "nextjs-toploader";
-import { Toaster } from "react-hot-toast";
+import { Toaster } from "@/components/ui/toaster";
 import { Tooltip } from "react-tooltip";
 import config from "@/config";
 
@@ -73,14 +73,7 @@ const ClientLayout = ({ children }: { children: ReactNode }) => {
 
       {/* Content inside app/page.js files  */}
       {children}
-
-      {/* Show Success/Error messages anywhere from the app with toast() */}
-      <Toaster
-        toastOptions={{
-          duration: 3000,
-        }}
-      />
-
+      <Toaster />
       {/* Show tooltips if any JSX elements has these 2 attributes: data-tooltip-id="tooltip" data-tooltip-content="" */}
       <Tooltip
         id="tooltip"

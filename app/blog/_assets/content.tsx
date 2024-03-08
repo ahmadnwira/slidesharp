@@ -32,18 +32,18 @@ export const categories: categoryType[] = [
     titleShort: "Features",
     // The description of the category to display in the category page. Up to 160 characters.
     description:
-      "Here are the latest features we've added to ShipFast. I'm constantly improving our product to help you ship faster.",
+      "Here are the latest features we've added to SlideSharp. I'm constantly improving our product to help you ship faster.",
     // A short version of the description above, only displayed in the <Header /> on mobile. Up to 60 characters.
-    descriptionShort: "Latest features added to ShipFast.",
+    descriptionShort: "Latest features added to SlideSharp.",
   },
   {
     slug: categorySlugs.tutorial,
     title: "How Tos & Tutorials",
     titleShort: "Tutorials",
     description:
-      "Learn how to use ShipFast with these step-by-step tutorials. I'll show you how to ship faster and save time.",
+      "Learn how to use SlideSharp with these step-by-step tutorials. I'll show you how to ship faster and save time.",
     descriptionShort:
-      "Learn how to use ShipFast with these step-by-step tutorials.",
+      "Learn how to use SlideSharp with these step-by-step tutorials.",
   },
 ];
 
@@ -202,10 +202,10 @@ export const articles: articleType[] = [
     // The unique slug to use in the URL. It's also used to generate the canonical URL.
     slug: "introducing-supabase",
     // The title to display in the article page (h1). Less than 60 characters. It's also used to generate the meta title.
-    title: "Introducing Supabase to ShipFast",
+    title: "Introducing Supabase to SlideSharp",
     // The description of the article to display in the article page. Up to 160 characters. It's also used to generate the meta description.
     description:
-      "Supabase is an open-source Firebase alternative. It's a great tool for building a backend for your app. It's now integrated with ShipFast!",
+      "Supabase is an open-source Firebase alternative. It's a great tool for building a backend for your app. It's now integrated with SlideSharp!",
     // An array of categories of the article. It's used to generate the category badges, the category filter, and more.
     categories: [
       categories.find((category) => category.slug === categorySlugs.feature),
@@ -219,14 +219,14 @@ export const articles: articleType[] = [
       src: introducingSupabaseImg,
       // The relative URL of the same image to use in the Open Graph meta tags & the Schema Markup JSON-LD. It should be the same image as the src above.
       urlRelative: "/blog/introducing-supabase/header.jpg",
-      alt: "Supabase and ShipFast logo combined",
+      alt: "Supabase and SlideSharp logo combined",
     },
     // The actual content of the article that will be shown under the <h1> title in the article page.
     content: (
       <>
         <Image
           src={introducingSupabaseImg}
-          alt="Supabase and ShipFast logo combined"
+          alt="Supabase and SlideSharp logo combined"
           width={700}
           height={500}
           priority={true}
@@ -238,7 +238,7 @@ export const articles: articleType[] = [
           <p className={styles.p}>
             Supabase is an open-source Firebase alternative. It&apos;s a great
             tool for building a backend for your app. It&apos;s now integrated
-            with ShipFast!
+            with SlideSharp!
           </p>
         </section>
 
@@ -271,11 +271,11 @@ export const articles: articleType[] = [
         </section>
 
         <section>
-          <h3 className={styles.h3}>2. Add your credentials to ShipFast</h3>
+          <h3 className={styles.h3}>2. Add your credentials to SlideSharp</h3>
           <p className={styles.p}>
             Copy the <span className={styles.codeInline}>API URL</span> and{" "}
             <span className={styles.codeInline}>API Key</span> from your
-            Supabase project settings and add them to your ShipFast project
+            Supabase project settings and add them to your SlideSharp project
             settings. Add these files to your project:
           </p>
 

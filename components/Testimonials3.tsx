@@ -92,7 +92,7 @@ const Testimonials3 = () => {
           </div>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base text-base-content/80">
             Don&apos;t take our word for it. Here&apos;s what they have to say
-            about ShipFast.
+            about SlideSharp.
           </p>
         </div>
 

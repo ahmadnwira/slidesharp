@@ -12,6 +12,8 @@ interface Feature {
   format?: string;
   alt?: string;
   svg?: JSX.Element;
+  cta: string;
+  ctaLink: string;
 }
 
 // The features array is a list of features that will be displayed in the accordion.
@@ -23,9 +25,10 @@ interface Feature {
 // - alt: The alt text of the image (if type is 'image')
 const features = [
   {
-    title: "Emails",
+    title: "Stop agonizing over every word",
+    cta: "Achieve a Result-Driven Pitch NOW!",
     description:
-      "Send transactional emails, setup your DNS to avoid spam folder (DKIM, DMARC, SPF in subdomain), and listen to webhook to receive & forward emails",
+      "SlideSharp transform confusing phrases into pitch-perfect language that secures 'Yes' votes.",
     type: "video",
     path: "https://d3m8mk7e1mf7xn.cloudfront.net/app/newsletter.webm",
     format: "video/webm",
@@ -46,9 +49,10 @@ const features = [
     ),
   },
   {
-    title: "Payments",
+    title: " Every Slide Matters",
     description:
-      "Create checkout sessions, handle webhooks to update user's account (subscriptions, one-time payments...) and tips to setup your account & reduce chargebacks",
+      "Get slide-by-slide feedback to perfect your pitch. Identify weak spots and transform each slide into a powerful part of your story.",
+    cta: "Pinpoint Your Weak Slides Today!",
     type: "image",
     path: "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3540&q=80",
     alt: "A computer",
@@ -70,9 +74,10 @@ const features = [
     ),
   },
   {
-    title: "Authentication",
+    title: "Master Your Message",
     description:
-      "Magic links setup, login with Google walkthrough, save user in MongoDB/Supabase, private/protected pages & API calls",
+      "Unlock a pitch that speaks volumes. SlideSharp comprehensive report assessing market potential, narrative flow, and overall clarity. SlideSharp's insights ensure your pitch stands out and resonates with investors.",
+    cta: "Optimize Your Pitch Deck Now!",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -91,9 +96,10 @@ const features = [
     ),
   },
   {
-    title: "Style",
+    title: "See What Works",
     description:
-      "Components, animations & sections (like this features section), 20+ themes with daisyUI, automatic dark mode",
+      "Analyze successful pitch decks from top companies like Uber and Airbnb. Model your pitch on proven strategies and craft a compelling story that resonates with investors.",
+    cta: "Claim Your Funding: See What Works!",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -125,7 +131,7 @@ const Item = ({
   setFeatureSelected: () => void;
 }) => {
   const accordion = useRef(null);
-  const { title, description, svg } = feature;
+  const { title, description, svg, cta, ctaLink } = feature;
 
   return (
     <li>
@@ -159,6 +165,11 @@ const Item = ({
         }
       >
         <div className="pb-5 leading-relaxed">{description}</div>
+        {cta && (
+          <a href={ctaLink} className="btn btn-primary">
+            {cta}
+          </a>
+        )}
       </div>
     </li>
   );
@@ -218,7 +229,7 @@ const FeaturesAccordion = () => {
         <h2 className="font-extrabold text-4xl lg:text-6xl tracking-tight mb-12 md:mb-24">
           All you need to ship your startup fast
           <span className="bg-neutral text-neutral-content px-2 md:px-4 ml-1 md:ml-1.5 leading-relaxed whitespace-nowrap">
-            and get profitable
+            and get funded
           </span>
         </h2>
         <div className=" flex flex-col md:flex-row gap-12 md:gap-24">
@@ -229,7 +240,7 @@ const FeaturesAccordion = () => {
                   key={feature.title}
                   index={i}
                   feature={feature}
-                  isOpen={featureSelected === i}
+                  isOpen={true}
                   setFeatureSelected={() => setFeatureSelected(i)}
                 />
               ))}

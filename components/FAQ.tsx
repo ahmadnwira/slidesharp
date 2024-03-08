@@ -14,7 +14,70 @@ interface FAQItemProps {
 const faqList: FAQItemProps[] = [
   {
     question: "What do I get exactly?",
-    answer: <div className="space-y-2 leading-relaxed">Loreum Ipseum</div>,
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        Our slide-by-slide analysis covers: Clarity, Design, Content Relevance,
+        Overall Impact.
+        <br />
+        The comprehensive summary saves time by quickly understanding your
+        pitch&apos;s strengths and weaknesses. Prioritize what to fix for
+        maximum results.
+      </div>
+    ),
+  },
+  {
+    question: "Can I share my SlideSharp report with my team?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        Absolutely! We encourage sharing your SlideSharp reports with your team.
+        Collaboration is key to refining your pitch deck. The downloadable full
+        report can be easily shared and discussed among team members.
+      </div>
+    ),
+  },
+  {
+    question: "What if I need more than 15 uploads a month?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        If you find yourself needing more uploads, our All-In Plan offers up to
+        30 uploads per month, providing ample opportunity for refinement and
+        testing different versions of your pitch deck.
+      </div>
+    ),
+  },
+  {
+    question: "Will my pitch deck be used to train your AI model?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        Absolutely not. We respect the confidentiality and proprietary content
+        of your pitch decks. They are never used to train our AI model, ensuring
+        your intellectual property remains protected.
+      </div>
+    ),
+  },
+  {
+    question: "Get the most out of your 30-minute consultation?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        Prepare specific questions or areas where you seek deeper insights. It
+        could range from asking for advice on improving your narrative flow,
+        seeking clarity on certain feedback points, or strategies to enhance
+        your design. The more prepared you are, the more value you&apso;ll get
+        from the consultation.
+      </div>
+    ),
+  },
+  {
+    question:
+      "Is the option to hire a custom designer included in the All-In Plan cost?",
+    answer: (
+      <div className="space-y-2 leading-relaxed">
+        he option to hire a custom designer is available for an additional $99.
+        This service is tailored for those who wish to elevate their pitch
+        deck&apso;s design to a professional level, ensuring your visuals are as
+        persuasive as your narrative.
+      </div>
+    ),
   },
   {
     question: "Can I get a refund?",

@@ -13,7 +13,7 @@ import config from "@/config";
 
 // I need your help to write a simple privacy policy for my website. Here is some context:
 // - Website: https://shipfa.st
-// - Name: ShipFast
+// - Name: SlideSharp
 // - Description: A JavaScript code boilerplate to help entrepreneurs launch their startups faster
 // - User data collected: name, email and payment information
 // - Non-personal data collection: web cookies
@@ -59,7 +59,7 @@ const PrivacyPolicy = () => {
         >
           {`Last Updated: 2023-08-25
 
-Thank you for visiting ShipFast ("we," "us," or "our"). This Privacy Policy outlines how we collect, use, and protect your personal and non-personal information when you use our website located at https://shipfa.st (the "Website").
+Thank you for visiting SlideSharp ("we," "us," or "our"). This Privacy Policy outlines how we collect, use, and protect your personal and non-personal information when you use our website located at https://shipfa.st (the "Website").
 
 By accessing or using the Website, you agree to the terms of this Privacy Policy. If you do not agree with the practices described in this policy, please do not use the Website.
 
@@ -87,7 +87,7 @@ We do not share your personal data with any third parties except as required for
 
 4. Children's Privacy
 
-ShipFast is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at the email address provided below.
+SlideSharp is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us at the email address provided below.
 
 5. Updates to the Privacy Policy
 
@@ -101,7 +101,7 @@ Email: marc@shipfa.st
 
 For all other inquiries, please visit our Contact Us page on the Website.
 
-By using ShipFast, you consent to the terms of this Privacy Policy.`}
+By using SlideSharp, you consent to the terms of this Privacy Policy.`}
         </pre>
       </div>
     </main>

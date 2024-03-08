@@ -13,7 +13,7 @@ import config from "@/config";
 
 // I need your help to write a simple Terms & Services for my website. Here is some context:
 // - Website: https://shipfa.st
-// - Name: ShipFast
+// - Name: SlideSharp
 // - Contact information: marc@shipfa.st
 // - Description: A JavaScript code boilerplate to help entrepreneurs launch their startups faster
 // - Ownership: when buying a package, users can download code to create apps. They own the code but they do not have the right to resell it. They can ask for a full refund within 7 day after the purchase.
@@ -59,17 +59,17 @@ const TOS = () => {
         >
           {`Last Updated: September 26, 2023
 
-Welcome to ShipFast!
+Welcome to SlideSharp!
 
-These Terms of Service ("Terms") govern your use of the ShipFast website at https://shipfa.st ("Website") and the services provided by ShipFast. By using our Website and services, you agree to these Terms.
+These Terms of Service ("Terms") govern your use of the SlideSharp website at https://shipfa.st ("Website") and the services provided by SlideSharp. By using our Website and services, you agree to these Terms.
 
-1. Description of ShipFast
+1. Description of SlideSharp
 
-ShipFast is a platform that offers a JavaScript code boilerplate to assist entrepreneurs in launching their startups more efficiently.
+SlideSharp is a platform that offers a JavaScript code boilerplate to assist entrepreneurs in launching their startups more efficiently.
 
 2. Ownership and Usage Rights
 
-When you purchase a package from ShipFast, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
+When you purchase a package from SlideSharp, you gain the right to download and use the code provided for creating applications. You own the code you create but do not have the right to resell it. We offer a full refund within 7 days of purchase, as specified in our refund policy.
 
 3. User Data and Privacy
 
@@ -89,7 +89,7 @@ We may update these Terms from time to time. Users will be notified of any chang
 
 For any questions or concerns regarding these Terms of Service, please contact us at marc@shipfa.st.
 
-Thank you for using ShipFast!`}
+Thank you for using SlideSharp!`}
         </pre>
       </div>
     </main>

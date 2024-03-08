@@ -1,12 +1,33 @@
 {
-  "extends": ["next/core-web-vitals", "eslint:recommended"],
+  "extends": ["next/core-web-vitals", "eslint:recommended", "plugin:jest/recommended"],
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
+  "plugins": ["jest"],
   "rules": {
-    // Your specific rules.
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    // "no-console": "warn",
+    "no-debugger": "warn",
+    "consistent-return": "warn",
+    "prefer-const": [
+      "warn",
+      {
+        "destructuring": "all",
+        "ignoreReadBeforeAssign": true
+      }
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 120,
+        "ignoreUrls": true,
+        "ignoreComments": false,
+        "ignoreStrings": true,
+        "ignoreTemplateLiterals": true
+      }
+    ]
   }
 }

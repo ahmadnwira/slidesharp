@@ -32,6 +32,7 @@
     "next-sitemap": "^4.2.2",
     "nextjs-toploader": "^1.4.2",
     "nodemailer": "^6.9.4",
+    "pdfjs-dist": "^4.0.379",
     "postgres": "^3.4.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -40,7 +41,7 @@
     "stripe": "^13.2.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.2"
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/jest": "^29.5.4",

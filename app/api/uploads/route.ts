@@ -1,4 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server';
+import { promises as fs } from 'fs';
 import { z } from 'zod';
 import { extractTextFromPDF } from '@/libs/pdfHelper';
 import { sendOpenAi } from '@/libs/gpt';
@@ -11,95 +12,33 @@ const pdfFileSchema = z.object({
 
 export async function POST(req: NextRequest) {
   try {
-    // const formData = await req.formData();
-    // const fileEntry = formData.get('file');
+    const formData = await req.formData();
+    const fileEntry = formData.get('file');
 
-    // if (!fileEntry || typeof fileEntry === 'string') {
-    //   return NextResponse.json({ error: 'File is required and must not be a string' }, { status: 400 });
-    // }
+    if (!fileEntry || typeof fileEntry === 'string') {
+      return NextResponse.json({ error: 'File is required and must not be a string' }, { status: 400 });
+    }
 
-    // const fileMetadata = {
-    //   type: fileEntry.type,
-    //   size: fileEntry.size
-    // };
+    const fileMetadata = {
+      type: fileEntry.type,
+      size: fileEntry.size
+    };
 
-    // Validate file metadata
     // pdfFileSchema.parse(fileMetadata);
+    console.log('parsing file');
+    const fileBuffer = Buffer.from(await fileEntry.arrayBuffer());
+    const allText = await extractTextFromPDF(fileBuffer);
+    console.log('file parsed', allText);
 
-    // Assuming fileEntry.stream() is available and extractTextFromPDF supports Buffer input directly
-    // const fileBuffer = Buffer.from(await fileEntry.arrayBuffer());
-    // const allText = await extractTextFromPDF(fileBuffer);
-    const allText = `    Premium Freelance Talent Marketplace Focused on Startups.
+    // const messages = [
+    //   { role: 'system', content: summaryPrompt },
+    //   { role: 'user', content: allText }
+    // ];
 
-    Problem
-1 Qualified talent 2 Payment
-3 Social security
-         *According to magnitt State of MENA Startups 2019
- 
-    Solution
-1 Trusted directory
-2 Transnational payment
-3 Medical & Social security plans
-       
-      Post unlimited projects
+    // const openAIResponse = await sendOpenAi(messages);
 
-      Get qualified applicants
-
-        Collaborate
-Send payment
-
-      Apply for unlimited projects
-
-        Collaborate Get paid
-
-     Traction
-  
-    400K
-Earned by freelancers from Jan 2020
-   
-    How we make money?
-● 10% for transactional payment & conflict resolution services.
-● Fixed pricing plans for Startups & SMEs (one-off / subscriptions).
-   
-    Competitors
-        Ourspark
-Ureed
-Al7arefa
-Upwork
-Screened talent
-Startup Focused
-Social security
-Payment
-     
-    Market size
-100K freelancer in Egypt
-$4 Billion freelancing market in MENA $18 Billion global market
-     *World Bank 2016 report
-
-    Ask
-   1,000,000 EGP
-
-    Team
-Ahmed Salah
-Founder-CEO
-4+ years as a freelancer Developer @ Scandiweb Developer @ Udacity
-Ahmed Mohamed
-Founder-CCO
-6+ years as a freelancer
-SE @ (MIG)
-SE @ Hammam Industries & Co.
-     `;
-    const messages = [
-      { role: 'system', content: summaryPrompt },
-      { role: 'user', content: allText }
-    ];
-
-    const openAIResponse = await sendOpenAi(messages);
-
-    return NextResponse.json({ message: 'Report generated successfully', report: openAIResponse });
+    return NextResponse.json({ message: 'Report generated successfully', report: allText });
   } catch (error) {
-    console.error(error);
-
     if (error instanceof z.ZodError) {
       return NextResponse.json({ error: 'Validation failed', details: error.errors }, { status: 400 });
     }

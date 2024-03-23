@@ -3,7 +3,7 @@
 import ButtonAccount from '@/components/ButtonAccount';
 import FileUpload from './components/FileUpload';
 
-export default async function Dashboard() {
+export default function Dashboard() {
   return (
     <main className="min-h-screen p-8 pb-24">
       <section className="max-w-xl mx-auto space-y-8">

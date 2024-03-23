@@ -4,6 +4,7 @@ import { useUploadFile } from '@/hooks/useUploadFile';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { UploadIcon } from 'lucide-react';
+import { Input } from '@/components/ui/input';
 
 interface FileUploadProps {
   onUploadSuccess: () => void;
@@ -26,7 +27,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUploadSuccess }) => {
 
   const { mutate: uploadFile, isPending, isError, error } = useUploadFile();
 
-  const handleUploadClick = () => {
+  const handleUploadClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     if (file) {
       uploadFile(file, {
         onSuccess: () => {
@@ -43,7 +44,7 @@ const FileUpload: React.FC<FileUploadProps> = ({ onUploadSuccess }) => {
       {...getRootProps()}
       className="border-2 border-dashed border-gray-300 p-6 rounded-md text-center cursor-pointer hover:border-gray-400"
     >
-      <input {...getInputProps()} />
+      <Input {...getInputProps()} />
       <div className="flex flex-col items-center justify-center">
         <UploadIcon className="w-12 h-12 text-gray-400 mb-2" />
         {isPending ? (
